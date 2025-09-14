@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useApp } from '../context/AppContext.jsx'
 import { useQRGenerator } from '../hooks/useQRGenerator.js'
 import { currency } from '../utils/format.js'
+import ProductImage from '../components/shared/ProductImage.jsx'
 
 export default function CustomerOrderView({ orderId }) {
   console.log('🚀 CustomerOrderView rendered with orderId:', orderId)
@@ -126,12 +127,11 @@ export default function CustomerOrderView({ orderId }) {
               <div className="item-info">
                 {item.productImage && (
                   <div className="item-image">
-                    <img 
+                    <ProductImage
                       src={item.productImage} 
                       alt={item.productName}
-                      onError={(e) => {
-                        e.target.style.display = 'none'
-                      }}
+                      size="40px"
+                      useImports={true}
                     />
                   </div>
                 )}

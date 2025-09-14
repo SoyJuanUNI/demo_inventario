@@ -452,6 +452,7 @@ export default function AdminPanel() {
                       alt={product.name}
                       size="32px"
                       style={{ className: 'product-thumbnail' }}
+                      useImports={true}
                     />
                   </td>
                   <td>{product.name}</td>
@@ -545,6 +546,7 @@ export default function AdminPanel() {
                               alt={product.name}
                               size="64px"
                               style={{ className: 'product-thumbnail' }}
+                              useImports={true}
                             />
                           </div>
                           <div className="product-info">
@@ -628,6 +630,7 @@ export default function AdminPanel() {
                             alt={product.name}
                             size="64px"
                             style={{ className: 'product-thumbnail' }}
+                            useImports={true}
                           />
                         </div>
                         <div className="product-info">
@@ -742,6 +745,7 @@ export default function AdminPanel() {
                         alt={product.name}
                         size="32px"
                         style={{ className: 'product-thumbnail' }}
+                        useImports={true}
                       />
                       <span>{product.name}</span>
                     </div>
@@ -845,6 +849,7 @@ export default function AdminPanel() {
                               alt={product?.name || 'Producto'}
                               size="48px"
                               style={{ className: 'item-thumbnail' }}
+                              useImports={true}
                             />
                           </div>
                           <div className="item-info">
@@ -1134,6 +1139,7 @@ export default function AdminPanel() {
                       alt={product.name}
                       size="40px"
                       style={{ className: 'product-thumbnail' }}
+                      useImports={true}
                     />
                     <div className="product-details">
                       <div className="product-name">{product.name}</div>
@@ -1356,6 +1362,7 @@ export default function AdminPanel() {
                       alt="Vista previa"
                       size="120px"
                       style={{ className: 'product-image-preview' }}
+                      useImports={true}
                     />
                   </div>
                   <div className="upload-controls">

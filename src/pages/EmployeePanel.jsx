@@ -10,6 +10,7 @@ import { currency } from '../utils/format.js'
 import Modal from '../components/Modal.jsx'
 import QRModal from '../components/QRModal.jsx'
 import { ActionButton, LoadingButton } from '../components/EnhancedButton.jsx'
+import ProductImage from '../components/shared/ProductImage.jsx'
 
 function InventoryList({ onAdd, onAddWithOptions, filterText, categoryId, availability }) {
   const { products } = useProducts()
@@ -65,21 +66,16 @@ function InventoryList({ onAdd, onAddWithOptions, filterText, categoryId, availa
                   <tr key={p.id} className={rowClass(p.id)} onMouseEnter={() => setSel(filtered.findIndex(fp => fp.id === p.id))}>
                     <td>
                       {p.image && (
-                        <img 
+                        <ProductImage
                           src={p.image} 
                           alt={p.name}
-                          className="product-table-image"
+                          size="50px"
                           style={{ 
-                            width: '50px', 
-                            height: '50px', 
-                            objectFit: p.name.toLowerCase().includes('agua') ? 'contain' : 'cover', 
-                            borderRadius: '4px',
-                            border: '1px solid var(--border-color, #ddd)',
-                            backgroundColor: p.name.toLowerCase().includes('agua') ? '#f8f9fa' : 'transparent'
+                            objectFit: p.name.toLowerCase().includes('agua') ? 'contain' : 'cover',
+                            backgroundColor: p.name.toLowerCase().includes('agua') ? '#f8f9fa' : 'transparent',
+                            className: 'product-table-image'
                           }}
-                          onError={(e) => {
-                            e.target.style.display = 'none'
-                          }}
+                          useImports={true}
                         />
                       )}
                     </td>
