@@ -6,5 +6,14 @@ export default defineConfig({
   server: {
     port: 5173,
     open: true
-  }
+  },
+  build: {
+    assetsDir: 'assets',
+    rollupOptions: {
+      output: {
+        manualChunks: undefined
+      }
+    }
+  },
+  publicDir: 'public'
 })
