@@ -7,6 +7,7 @@ import { useUI } from '../hooks/useUI.js'
 import { currency, genId, nowIso } from '../utils/format.js'
 import Modal from '../components/Modal.jsx'
 import Toast from '../components/Toast.jsx'
+import ProductImage from '../components/shared/ProductImage.jsx'
 
 export default function AdminPanel() {
   const { state, dispatch } = useApp()
@@ -446,13 +447,11 @@ export default function AdminPanel() {
               return (
                 <tr key={product.id}>
                   <td>
-                    <img 
+                    <ProductImage
                       src={product.image} 
                       alt={product.name}
-                      className="product-thumbnail"
-                      onError={(e) => {
-                        e.target.src = '/images/products/default-food.svg'
-                      }}
+                      size="32px"
+                      style={{ className: 'product-thumbnail' }}
                     />
                   </td>
                   <td>{product.name}</td>
@@ -541,13 +540,11 @@ export default function AdminPanel() {
                       return (
                         <div key={product.id} className="product-card">
                           <div className="product-image">
-                            <img 
+                            <ProductImage
                               src={product.image} 
                               alt={product.name}
-                              className="product-thumbnail"
-                              onError={(e) => {
-                                e.target.src = '/images/products/default-food.svg'
-                              }}
+                              size="64px"
+                              style={{ className: 'product-thumbnail' }}
                             />
                           </div>
                           <div className="product-info">
@@ -626,13 +623,11 @@ export default function AdminPanel() {
                     return (
                       <div key={product.id} className="product-card">
                         <div className="product-image">
-                          <img 
+                          <ProductImage
                             src={product.image} 
                             alt={product.name}
-                            className="product-thumbnail"
-                            onError={(e) => {
-                              e.target.src = '/images/products/default-food.svg'
-                            }}
+                            size="64px"
+                            style={{ className: 'product-thumbnail' }}
                           />
                         </div>
                         <div className="product-info">
@@ -742,13 +737,11 @@ export default function AdminPanel() {
                 <tr key={product.id}>
                   <td>
                     <div className="product-info">
-                      <img 
+                      <ProductImage
                         src={product.image} 
                         alt={product.name}
-                        className="product-thumbnail"
-                        onError={(e) => {
-                          e.target.src = '/images/products/default-food.svg'
-                        }}
+                        size="32px"
+                        style={{ className: 'product-thumbnail' }}
                       />
                       <span>{product.name}</span>
                     </div>
@@ -847,13 +840,11 @@ export default function AdminPanel() {
                       return (
                         <div key={item.id} className="order-item-detail">
                           <div className="item-image">
-                            <img 
-                              src={product?.image || '/images/products/default-food.svg'} 
+                            <ProductImage
+                              src={product?.image} 
                               alt={product?.name || 'Producto'}
-                              className="item-thumbnail"
-                              onError={(e) => {
-                                e.target.src = '/images/products/default-food.svg'
-                              }}
+                              size="48px"
+                              style={{ className: 'item-thumbnail' }}
                             />
                           </div>
                           <div className="item-info">
@@ -1138,13 +1129,11 @@ export default function AdminPanel() {
               return (
                 <div key={product.id} className="low-stock-item">
                   <div className="product-info">
-                    <img 
+                    <ProductImage
                       src={product.image} 
                       alt={product.name}
-                      className="product-thumbnail"
-                      onError={(e) => {
-                        e.target.src = '/images/products/default-food.svg'
-                      }}
+                      size="40px"
+                      style={{ className: 'product-thumbnail' }}
                     />
                     <div className="product-details">
                       <div className="product-name">{product.name}</div>
@@ -1362,13 +1351,11 @@ export default function AdminPanel() {
                 <label>Foto del producto:</label>
                 <div className="image-upload-container">
                   <div className="image-preview">
-                    <img 
+                    <ProductImage
                       src={newProduct.image} 
                       alt="Vista previa"
-                      className="product-image-preview"
-                      onError={(e) => {
-                        e.target.src = '/images/products/default-food.svg'
-                      }}
+                      size="120px"
+                      style={{ className: 'product-image-preview' }}
                     />
                   </div>
                   <div className="upload-controls">
